@@ -6,8 +6,8 @@
 	<title>Nicole's namecard</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
-    <link rel="shortcut icon" href="./pic/favicon.png" type="image/x-icon" />
-	<link rel="icon" href="./pic/favicon.ico" type="image/x-icon" />
+  <!--<link rel="shortcut icon" href="./pic/favicon.png" type="image/x-icon" />
+	<link rel="icon" href="./pic/favicon.ico" type="image/x-icon" />-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- load CSS 
 	<link rel="stylesheet" href="./css/main.css">-->
@@ -18,6 +18,10 @@
 </head>
 <body>
 <style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,700&display=swap&subset=chinese-traditional');
+body{
+  font-family: 'Noto Sans TC', Helvetica, Arial, sans-serif;
+}
 .bg
 {
     position: fixed;
@@ -28,15 +32,14 @@
     background: #444;
     padding: 0rem;
     z-index: -99;
+    background: url(pic/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.bgimg{
-    position: fixed;
-    top: -10%;
-    left: 0%;
-    right: 0%;
-    width: 100%;
-}
+
 .shadow{
     position: fixed;
     top: 0;
@@ -81,52 +84,86 @@
   }
 }
 .box{
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-delay: 1s;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  
+  padding: 20vh 0px;
 }
 .icon{
     width: 50%;
     max-width: 500px;
     display: block;
     margin: 0 auto;
-    padding: 35vh 0px;
     animation: vibrate 0.8s linear infinite both;
 
 }
 
 .row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content:center;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-
+  width: 95%;
+  display: flex;
+  margin: 2rem auto;
+  max-width: 550px;
+  cursor: pointer;
 }
-.row .col{
-    position: relative;
-    flex: 1 1 46%;
-    background-color: #FFF;
-    padding: 0rem;
-    margin: 0rem;
-    height: 50vh;
+.row .left{
+  flex: 0 1 18%;
+  padding: .5rem;
+}
+.row .left img{
+  
+  width: 100%;
+  border-radius: 5px;
+  border: #ddd solid 0.5px;
+  margin: .5rem 0;
+}
+.row .bar{
+  background-color: #888;
+  flex: 0 0 0;
+  content: " ";
+  padding: 12px 1px;
+  margin: .9rem 0rem .9rem .75rem;
+}
+.row .right{
+  flex: 1 1 80%;
+  padding: 1rem .5rem;
+}
+
+.row .right .title{
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.row .right .content{
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  font-size: .9rem;
+  color: #555;
 }
 
 @media (max-width: 991.98px) {
+.box{
+  padding: 28vh 0px;
+}
 .icon{
-    width: 90%;
-    padding: 40vh 0px;
-
+  width: 90%;
 } 
+.row .left{
+  flex: 0 1 28%;
+}
+.row .right{
+  flex: 0 1 70%;
+}
+
 }
 
 
@@ -134,11 +171,20 @@
     </style>
 <section id="main">
     <div class="bg">
-        <img src="pic/bg.jpg" class="bgimg">
         <div class="shadow"></div>
     </div>
     <div class="box">
         <img src="pic/moto.gif" class="icon">
+        <div class="row" onclick="window.open('https://www.pixnet.net/pcard/869095d971efb07b01/article/8a62e530-e699-11e9-8e01-7b88d1368dd0')">
+          <div class=left>
+            <img src="pic/info1.jpg">
+          </div>
+          <div class="bar"></div>
+          <div class="right">
+            <p class="title">山莊藝術走廊畫展</p>
+            <p class="content">文化價值在於人與人之間的互動分享，我致力於拓展文藝視界...</p>
+          </div>
+        </div>
     </div>
     <!--<div>Icons made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/"   title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"   title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 -->
